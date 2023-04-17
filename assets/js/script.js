@@ -52,3 +52,11 @@ form.addEventListener('keypress', function(event) {
         document.getElementById('#calculate').click();
     }
 });
+
+const alturaInput = document.getElementById('height');
+
+alturaInput.addEventListener('input', function(e) {
+  const altura = this.value.replace(/\D/g, '');
+  const alturaComPonto = altura.slice(0, -2) + '.' + altura.slice(-2);
+  this.value = alturaComPonto;
+});
